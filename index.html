@@ -3,12 +3,40 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ServiceWorker examples</title>
+
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+	<script>
+
+
+		if ('serviceWorker' in navigator) {
+		  navigator.serviceWorker.register('sw.js', {
+		    //scope: '/my-app/'
+		  }).then(function(reg) {
+		    console.log('Yey!', reg);
+		  }).catch(function(err) {
+		    console.log('Boo!', err);
+		  });
+		}
+	</script>
 </head>
 <body>
 
 	<div class="container">
-			<h1>ServiceWorker examples</h1>
+		<h1>ServiceWorker examples</h1>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus doloribus obcaecati itaque similique, iure saepe expedita amet placeat molestias animi ducimus alias iste earum quae quisquam vero quidem voluptatum sapiente!</p>
+
+		<img src="images/bild1" alt="Bild" class="img-responsive" />
+		<img src="images/bild2" alt="Bild" class="img-responsive" />
+		<img src="images/bild3" alt="Bild" class="img-responsive" />
+		<img src="images/bild4" alt="Bild" class="img-responsive" />
+		<img src="images/bild5" alt="Bild" class="img-responsive" />
+		<img src="images/bild6" alt="Bild" class="img-responsive" />
 	</div>
 
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	
 </body>
 </html>
