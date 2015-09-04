@@ -1,6 +1,4 @@
-console.log("SW startup");
-
-require('/serviceworker_examples/serviceworker-cache-polyfill.js');
+importScripts('/serviceworker_examples/serviceworker-cache-polyfill.js');
 
 
 self.addEventListener('install', function(event) {
