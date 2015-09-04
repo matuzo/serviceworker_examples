@@ -4,7 +4,7 @@ importScripts('/serviceworker_examples/serviceworker-cache-polyfill.js');
 self.addEventListener('install', function(event) {
   // pre cache a load of stuff:
   event.waitUntil(
-    cachesPolyfill.open('myapp-static-v1').then(function(cache) {
+    caches.open('myapp-static-v1').then(function(cache) {
       return cache.addAll([
         '/'
       ]);
@@ -19,7 +19,7 @@ self.addEventListener('activate', function(event) {
 self.addEventListener('fetch', function(event) {
   console.table(event.request)
   event.respondWith(
-    cachesPolyfill.match(event.request).then(function(response) {
+    caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
     })
   );
