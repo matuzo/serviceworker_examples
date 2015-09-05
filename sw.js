@@ -6,7 +6,9 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('myapp-static-v1').then(function(cache) {
       return cache.addAll([
-        '/serviceworker_examples/'
+        '/serviceworker_examples/',
+        '/serviceworker_examples/bower_components/jquery/dist/jquery.min.js',
+        '/serviceworker_examples/bower_components/bootstrap/dist/js/bootstrap.min.js'
       ]);
     })
   )
