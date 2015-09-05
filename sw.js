@@ -6,7 +6,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('myapp-static-v1').then(function(cache) {
       return cache.addAll([
-        '/'
+        '/serviceworker_examples/'
       ]);
     })
   )
@@ -17,7 +17,7 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  console.table(event.request)
+  //console.table(event.request)
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
